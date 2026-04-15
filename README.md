@@ -36,6 +36,8 @@ Features from the [Bear Cub theme](https://github.com/clente/hugo-bearcub) have 
 - RSS feeds for each tag (these were already being generated but are now linked to when filtering by tag)
 - Custom home footer
   - Useful for webrings or similar
+- A ntfy ping widget allowing visitors to send messages to a ntfy topic
+- Integrated [bubbles.town](https://bubbles.town) widget
 
 ### Changes
 - Tweaked generated social card colors
@@ -171,6 +173,7 @@ ignoreErrors = ["error-disable-taxonomy"]
     # The path to your contact page for visitors to be taken to when clicking the
     # reply link at the end of a post. Comment to disable this functionality.
     # contactPage = "/contact"
+    useBubbleWidget = false  # add a widget for bubbles.town to the bottom of each post
   
   [params.list]
     tagsOnTop = false # Display tags at top of the post list instead of bottom
@@ -189,6 +192,12 @@ ignoreErrors = ["error-disable-taxonomy"]
     name = "John Doe" # Your name as shown in the RSS feed metadata
     email = "me@example.com" # Added to the footer so readers can reply to posts
     fediverse = "@me@example.com" # For attribution (@user@example.com)
+
+  # Parameters for the ntfy ping widget
+  [params.ntfy]
+    # server = "example.com"  # comment to disable the widget
+    # topic = "blog-pings"
+    # token = "token"  # ideally should be tied to a user with limited access
 
 ```
 

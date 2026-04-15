@@ -46,4 +46,12 @@
     </a>
   </p>
 {{ end }}
+{{ if eq .Type "blog" }}
+  {{ with .Site.Params.ntfy.server }}
+    {{ partial "ntfy_ping.html" . }}
+  {{ end }}
+  {{ with .Site.Params.blog.useBubbleWidget }}
+    {{ partial "bubble_widget.html" . }}
+  {{ end }}
+{{ end }}
 {{ end }}
