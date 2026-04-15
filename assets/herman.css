@@ -237,3 +237,31 @@ figcaption > p {
     flex-direction: column;
   }
 }
+
+/* ntfy widget */
+
+.ntfy-ping {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+#ntfy-message {
+  flex-grow: 10;
+  background: var(--color-secondary);
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-primary);
+}
+#ntfy-submit {
+  width: 72px;
+  background: var(--color-accent-1);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#ntfy-submit > svg {
+  height: 100%;
+  width: 2rem;
+  fill: #fff;
+}
