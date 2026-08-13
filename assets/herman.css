@@ -244,6 +244,8 @@ figcaption > p {
   width: 100%;
   display: flex;
   gap: 1rem;
+  margin: 1em auto;
+  height: 2.5em;
 }
 #ntfy-message {
   flex-grow: 10;
@@ -264,4 +266,25 @@ figcaption > p {
   height: 100%;
   width: 2rem;
   fill: #fff;
+}
+
+/* post actions */
+
+.post-actions {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  margin: 1em auto;
+  min-height: 2.5em;
+}
+a.post-action {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--color-accent-1);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
 }

@@ -30,21 +30,21 @@
     <a class="blog-tags" href="{{ .RelPermalink }}">#{{ lower .LinkTitle }}</a>
   {{ end }}
 </p>
+{{ $replyURL := "" }}
 {{ if eq .Type "blog" }}
-  {{ with .Site.Params.blog.contactPage }}
-    <p>
-      <a href='{{ . }}'>
-        ↪ {{ i18n "reply" }}
-      </a>
-    </p>
-    {{ end }}
+  {{ $replyURL = .Site.Params.blog.contactPage }}
 {{ end }}
-{{ with .Params.comments }}
-  <p>
-    <a href='{{ . }}'>
-      ↪ {{ i18n "comment" }}
-    </a>
-  </p>
+{{ $commentURL := .Params.comments }}
+
+{{ if or $replyURL $commentURL }}
+<div class="post-actions">
+  {{ with $replyURL }}
+    <a class="post-action" href='{{ . }}'>{{ i18n "reply" }}</a>
+  {{ end }}
+  {{ with $commentURL }}
+    <a class="post-action" href='{{ . }}'>{{ i18n "comment" }}</a>
+  {{ end }}
+</div>
 {{ end }}
 {{ if eq .Type "blog" }}
   {{ with .Site.Params.ntfy.server }}
